@@ -21,10 +21,10 @@ import static com.key.imageio.imageioUtils.Constants.ImageFileType.IMAGE_TYPE_JP
 
 public class ImageUtils {
 
-    public static String FILE_SOURCE_DIR = "C:\\Users\\tujia\\Desktop\\tmp\\testpic\\back\\";
-    public static String FILE_SOURCE_DIR2 = "C:\\Users\\tujia\\Desktop\\tmp\\testpic\\imageio\\";
-    public static String FILE_DEST_DIR = "C:\\Users\\tujia\\Desktop\\tmp\\testpic\\imageio_dest\\";
-    public static String FILE_DEST_DIR2 = "C:\\Users\\tujia\\Desktop\\tmp\\testpic\\imageio_dest\\crop\\";
+    public static String FILE_SOURCE_DIR = "D:\\testpic\\back\\";
+    public static String FILE_SOURCE_DIR2 = "D:\\testpic\\imageio\\";
+    public static String FILE_DEST_DIR = "D:\\testpic\\imageio_dest\\";
+    public static String FILE_DEST_DIR2 = "D:\\testpic\\imageio_dest\\crop\\";
 
     /**
      * 注册tif的imageio类(web项目中必须，测试工具类中非必须)

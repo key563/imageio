@@ -240,8 +240,8 @@ public class ImageTransUtils {
      * @throws IOException
      */
     public static void main(String[] args) throws IOException {
-        String fileName = "C:\\Users\\tujia\\Desktop\\tmp\\上海交行";
-        String outFileName = "C:\\Users\\tujia\\Desktop\\tmp\\imageTransfer\\transfer2\\";
+        String fileName = "D:\\上海交行";
+        String outFileName = "D:\\imageTransfer\\transfer2\\";
         File dir = new File(fileName);
         if (dir.exists()) {
             if (dir.isDirectory()) {
@@ -252,7 +252,7 @@ public class ImageTransUtils {
                     if (!"jpg".equals(fileType) && !"png".equals(fileType)) {
                         // 转换格式
                         String dstFileName = outFileName + file.getName().substring(0, file.getName().lastIndexOf(".")) + "_transfer" + ".jpg";
-                        imageTransfer(file, dstFileName, "C:\\Users\\tujia\\Desktop\\tmp\\imageTransfer\\test3\\");
+                        imageTransfer(file, dstFileName, "D:\\imageTransfer\\test3\\");
                     }
                 }
             }

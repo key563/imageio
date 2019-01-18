@@ -12,7 +12,7 @@ import java.io.OutputStream;
 
 public class ThumbnailatorTest {
 
-    private static String FILE_DIR = "C:\\Users\\tujia\\Desktop\\tmp\\testpic\\";
+    private static String FILE_DIR = "D:\\testpic\\";
 
     public static void main(String[] args) throws IOException {
         ThumbnailatorTest test = new ThumbnailatorTest();
