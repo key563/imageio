@@ -5,12 +5,12 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.*;
+import java.util.function.Function;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
-import static java.util.stream.Collectors.joining;
 
 public class StreamDemo {
     public static void main(String[] args) throws Exception {
@@ -19,7 +19,8 @@ public class StreamDemo {
 //        minMax();
 //        supplier();
 //        iterate();
-        sideEffect();
+//        sideEffect();
+        testss();
 //        List<String> l = new ArrayList(Arrays.asList("one", "two"));
 //        Stream<String> sl = l.stream();
 //        Stream<String> s2 = l.stream();
@@ -86,7 +87,7 @@ public class StreamDemo {
     }
 
     public static void minMax() throws IOException {
-        String fileName = "C:\\Users\\tujia\\Desktop\\tmp\\jdk_learning\\words.txt";
+        String fileName = "D:\\jdk_learning\\words.txt";
         BufferedReader br = new BufferedReader(new FileReader(fileName));
         // 计算最长的一行
         int maxLength = br.lines().mapToInt(String::length).max().getAsInt();
@@ -135,7 +136,7 @@ public class StreamDemo {
 
     public static void bufferedReaderToStream() throws FileNotFoundException {
         // 读取文件流进行Stream操作
-        String fileName = "C:\\Users\\tujia\\Desktop\\tmp\\jdk_learning\\words.txt";
+        String fileName = "D:\\jdk_learning\\words.txt";
         BufferedReader br = new BufferedReader(new FileReader(fileName));
         List<String> words = br.lines().flatMap(line -> Stream.of(line.split(" "))).filter(word -> word.length() > 0).collect(Collectors.toList());
         words.forEach(System.out::println);
@@ -200,6 +201,41 @@ public class StreamDemo {
                 .collect(Collectors.toList());  // No side-effects!
         results.forEach(System.out::println);
         result.forEach(System.out::println);
+    }
+
+    /**
+     * 封装运行时异常捕获
+     *
+     * @param checkedFunction
+     * @param <T>
+     * @param <R>
+     * @return
+     */
+    public static <T, R> Function<T, R> wrap(CheckedFunction<T, R> checkedFunction) {
+        return t -> {
+            try {
+                return checkedFunction.apply(t);
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+        };
+    }
+
+    public Human doOpt(Human human){
+        return human;
+    }
+
+    public static int getWords(Object line){
+        String lines = (String) line;
+        return lines.split(" ").length;
+    }
+
+    public  static void testss() throws FileNotFoundException {
+        String fileName = "D:\\jdk_learning\\words.txt";
+        BufferedReader br = new BufferedReader(new FileReader(fileName));
+
+        int maxWordNum = br.lines().map(wrap(line -> getWords(line))).mapToInt(line -> line.intValue()).max().getAsInt();
+        System.out.println("单行单词数最多为:" + maxWordNum);
     }
 
 
