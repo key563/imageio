@@ -27,24 +27,5 @@ public class ImageioApplicationTests {
         t.start();
     }
 
-    @Test
-    public void ImageFileTypeTest() throws IOException {
-        String fileName = "C:\\Users\\tujia\\Desktop\\tmp\\testpic\\temp";
-        String outFileName = "C:\\Users\\tujia\\Desktop\\tmp\\imageTransfer\\transfer2\\";
-        File dir = new File(fileName);
-        if (dir.exists()) {
-            if (dir.isDirectory()) {
-                File[] files = dir.listFiles();
-                for (File file : files) {
-                    String fileType = ImageTransUtils.getFileType(file.getAbsolutePath());
-                    System.out.println("文件名：" + file.getName() + "--文件类型：" + fileType);
-//                    if (!"jpg".equals(fileType) && !"png".equals(fileType)) {
-//                        // 转换格式
-//                        String dstFileName = outFileName + file.getName().substring(0, file.getName().lastIndexOf(".")) + "_transfer" + ".jpg";
-//                        ImageTransUtils.imageTransfer(file, dstFileName, "C:\\Users\\tujia\\Desktop\\tmp\\imageTransfer\\test3\\");
-//                    }
-                }
-            }
-        }
-    }
+
 }
