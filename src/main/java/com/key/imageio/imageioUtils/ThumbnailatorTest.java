@@ -12,7 +12,7 @@ import java.io.OutputStream;
 
 public class ThumbnailatorTest {
 
-    private static String FILE_DIR = "D:\\testpic\\";
+    private static String FILE_DIR = "C:\\Users\\tujia\\Desktop\\tmp\\testpic\\";
 
     public static void main(String[] args) throws IOException {
         ThumbnailatorTest test = new ThumbnailatorTest();
@@ -75,8 +75,8 @@ public class ThumbnailatorTest {
         /**
          * rotate(角度),正数：顺时针 负数：逆时针
          */
-        Thumbnails.of("images/test.jpg").size(1280, 1024).rotate(90).toFile(
-                "C:/image+90.jpg");
+        Thumbnails.of(FILE_DIR + "back\\b2.jpg").size(1280, 1024).rotate(90).toFile(
+                FILE_DIR + "imageio_dest\\b2_rotate_90.jpg");
         Thumbnails.of("images/test.jpg").size(1280, 1024).rotate(-90).toFile(
                 "C:/iamge-90.jpg");
     }

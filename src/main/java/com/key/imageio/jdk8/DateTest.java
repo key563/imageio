@@ -14,7 +14,7 @@ public class DateTest {
     public static void main(String[] args) throws Exception {
 //        timeUnitTest();
 //        durationTest();
-//        clockTest();
+        clockTest();
 //        instantTest();
 //        localDateTimeTest();
 //        zonedDateTimeTest();
@@ -26,7 +26,9 @@ public class DateTest {
      * 该对象封装了丰富的时间转换，如日时分秒之间的单位换算等，就不需要我们自己封装了，直接调用
      */
     public static void timeUnitTest() {
+        // 小时转换为秒
         System.out.println(TimeUnit.HOURS.toMillis(1));
+        // 小时转换为分
         System.out.println(TimeUnit.HOURS.toMinutes(2));
         System.out.println(TimeUnit.DAYS.toMinutes(1));
     }
@@ -62,7 +64,7 @@ public class DateTest {
         LocalDate startDate = LocalDate.now();
         LocalDate endDate = LocalDate.now().plusDays(2).plusMonths(1);
         Period period = Period.between(startDate, endDate);
-        Period period1 = Period.of(2018, 12, 31);
+        Period period1 = Period.of(2, 12, 1);
         System.out.println(period);
         System.out.println(period1);
 
@@ -124,6 +126,7 @@ public class DateTest {
 
 
         // 获取当前时间相对于1970-01-01 00:00:00 UTC偏移量，分为两个字段保存的（秒和纳秒）
+        // 相当于Date中的获取时间戳
         System.out.println(instant.getEpochSecond());
         System.out.println(instant.getNano());
         // 获取当前时间相对于1970-01-01 00:00:00 UTC偏移量，毫秒数值（13位）

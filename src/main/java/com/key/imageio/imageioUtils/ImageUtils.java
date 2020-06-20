@@ -21,10 +21,10 @@ import static com.key.imageio.imageioUtils.Constants.ImageFileType.IMAGE_TYPE_JP
 
 public class ImageUtils {
 
-    public static String FILE_SOURCE_DIR = "D:\\testpic\\back\\";
-    public static String FILE_SOURCE_DIR2 = "D:\\testpic\\imageio\\";
-    public static String FILE_DEST_DIR = "D:\\testpic\\imageio_dest\\";
-    public static String FILE_DEST_DIR2 = "D:\\testpic\\imageio_dest\\crop\\";
+    public static String FILE_SOURCE_DIR = "C:\\Users\\tujia\\Desktop\\tmp\\testpic\\back\\";
+    public static String FILE_SOURCE_DIR2 = "C:\\Users\\tujia\\Desktop\\tmp\\testpic\\imageio\\";
+    public static String FILE_DEST_DIR = "C:\\Users\\tujia\\Desktop\\tmp\\testpic\\imageio_dest\\";
+    public static String FILE_DEST_DIR2 = "C:\\Users\\tujia\\Desktop\\tmp\\testpic\\imageio_dest\\crop\\";
 
     /**
      * 注册tif的imageio类(web项目中必须，测试工具类中非必须)
@@ -712,6 +712,16 @@ public class ImageUtils {
         return result;
     }
 
+    /**
+     * 计算水印图片添加位置
+     *
+     * @param position   位置
+     * @param srcWidth   原图宽度
+     * @param srcHeight  原图高度
+     * @param markWidth  水印文字像素宽度
+     * @param markHeight 水印文字像素高度
+     * @return
+     */
     public static int[] judgeImagePosition(String position, int srcWidth, int srcHeight, int markWidth, int markHeight) {
         int[] result = new int[2];
         // 坐标

@@ -11,9 +11,9 @@ import java.util.Date;
 public class DateDemo {
 
     public static void main(String[] args) throws Exception {
-        testClock();
+//        testClock();
 //        testInstant();
-//        testLocalDateTime();
+        testLocalDateTime();
     }
 
     public void dateTest() {
@@ -86,6 +86,7 @@ public class DateDemo {
         // 使用DateTimeFormatter API 解析 和 格式化
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
         LocalDateTime d6 = LocalDateTime.parse("2013/12/31 23:59:59", formatter);
+        System.out.println("ddd");
         System.out.println(formatter.format(d6));
         // 时间获取
         System.out.println(d6.getYear());
