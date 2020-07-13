@@ -96,8 +96,9 @@ public class SocketServerTest {
                     // 有已经接受到新的服务端的连接
                     SocketChannel socketChannel = server.accept();
 
-                    // 将新的连接注册到Selector中，监听OP_READ事件，等待数据传输
+                    // 设置为非阻塞
                     socketChannel.configureBlocking(false);
+                    // 将新的连接注册到Selector中，监听OP_READ事件，等待数据传输
                     socketChannel.register(selector, SelectionKey.OP_READ);
                 } else if (key.isReadable()) {
                     // 有数据可读
