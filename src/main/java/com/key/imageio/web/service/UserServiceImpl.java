@@ -1,7 +1,10 @@
 package com.key.imageio.web.service;
 
+import com.key.imageio.web.dao.UserMapper;
 import com.key.imageio.web.entity.User;
 import org.springframework.stereotype.Service;
+
+import javax.annotation.Resource;
 
 /**
  * @author tujia
@@ -11,6 +14,8 @@ import org.springframework.stereotype.Service;
 public class UserServiceImpl implements IUserService {
 
     private User user;
+//    @Resource
+    private UserMapper userMapper;
 
     @Override
     public User createUser(String name, int age) {
@@ -20,6 +25,7 @@ public class UserServiceImpl implements IUserService {
 
     @Override
     public User queryUser() {
+        userMapper.deleteAll();
         return new User("test", 30);
     }
 }
